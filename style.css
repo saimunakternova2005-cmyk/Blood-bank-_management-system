@@ -1,0 +1,89 @@
+/* Search Box */
+
+.search-box {
+    max-width: 1300px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 18px;
+    border-radius: 30px;
+    border: 1px solid #dbe2ea;
+    outline: none;
+    font-size: 14px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.search-box input:focus {
+    border-color: #2195a0;
+    box-shadow: 0 5px 20px rgba(33,149,160,0.2);
+}
+
+
+/* Table Heading (Optional) */
+
+.table-heading {
+    padding: 20px 25px;
+    background: #f3f7fa;
+    border-bottom: 1px solid #e6edf2;
+}
+
+
+/* Blood Status Colors */
+
+.status-available {
+    background: #dff8ef;
+    color: #168864;
+}
+
+.status-low {
+    background: #fff1d3;
+    color: #d18416;
+}
+
+.status-out {
+    background: #ffe3e3;
+    color: #d84b4b;
+}
+
+
+/* Table Blood Highlight */
+
+tbody tr td:first-child {
+    font-weight: 700;
+    color: #173956;
+}
+
+
+/* Summary Icon Colors */
+
+.total-icon {
+    background: #e3edff;
+    color: #305fad;
+}
+
+.available-icon {
+    background: #dff8ef;
+    color: #168864;
+}
+
+.low-icon {
+    background: #fff1d3;
+    color: #d18416;
+}
+
+.out-icon {
+    background: #ffe3e3;
+    color: #d84b4b;
+}
+
+
+/* Small Improvement */
+
+.table-box {
+    margin-top: 20px;
+}
