@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blood Bank Management System</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="#home" class="logo">
+            <div class="logo-icon">🩸</div>
+
+            <div class="logo-text">
+                <h2>Blood Bank</h2>
+                <span>Management System</span>
+            </div>
+        </a>
+
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#objective">Objective</a>
+            <a href="#stock">Blood Stock</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="hero-container">
+
+        <div class="hero-content">
+            <span class="small-title">Blood Bank System</span>
+
+            <h1>
+                Smart Blood
+                <span>Management System</span>
+            </h1>
+
+            <p>
+                A simple system to track blood availability, monitor stock,
+                and quickly find required blood groups in emergency situations.
+            </p>
+
+            <a href="#stock" class="hero-button">
+                View Blood Stock
+            </a>
+        </div>
+
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1615461066159-fea0960485d5?auto=format&fit=crop&w=1000&q=80">
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Objective -->
+<section class="objective-section" id="objective">
+
+    <div class="section-heading">
+        <span>Project Info</span>
+        <h2>Objective</h2>
+
+        <p>Manage blood stock efficiently and ensure availability during emergencies.</p>
+    </div>
+
+    <div class="objective-grid">
+
+        <div class="objective-card">
+            <h3>Blood Monitoring</h3>
+            <p>Track available units of each blood group.</p>
+        </div>
+
+        <div class="objective-card">
+            <h3>Emergency Support</h3>
+            <p>Quickly find required blood groups.</p>
+        </div>
+
+        <div class="objective-card">
+            <h3>Stock Alerts</h3>
+            <p>Identify low and out-of-stock blood units.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Blood Stock -->
+<section class="stock-section" id="stock">
+
+    <div class="section-heading light-heading">
+        <span>Blood Overview</span>
+        <h2>Blood Stock Report</h2>
+    </div>
+
+    <!-- Summary -->
+    <div class="stock-summary">
+
+        <div class="summary-card">
+            <p>Total Units</p>
+            <h3>120</h3>
+        </div>
+
+        <div class="summary-card">
+            <p>Available</p>
+            <h3>85</h3>
+        </div>
+
+        <div class="summary-card">
+            <p>Low Stock</p>
+            <h3>25</h3>
+        </div>
+
+        <div class="summary-card">
+            <p>Out of Stock</p>
+            <h3>10</h3>
+        </div>
+
+    </div>
+
+
+    <!-- Search -->
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search Blood Group (A+, O-, AB+...)" onkeyup="searchBlood()">
+    </div>
+
+
+    <!-- Table -->
+    <div class="table-box">
+        <table id="bloodTable">
+
+            <tr>
+                <th>Blood Group</th>
+                <th>Units</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>A+</td>
+                <td>25</td>
+                <td>Available</td>
+            </tr>
+
+            <tr>
+                <td>A-</td>
+                <td>5</td>
+                <td>Low Stock</td>
+            </tr>
+
+            <tr>
+                <td>B+</td>
+                <td>18</td>
+                <td>Available</td>
+            </tr>
+
+            <tr>
+                <td>B-</td>
+                <td>3</td>
+                <td>Low Stock</td>
+            </tr>
+
+            <tr>
+                <td>O+</td>
+                <td>30</td>
+                <td>Available</td>
+            </tr>
+
+            <tr>
+                <td>O-</td>
+                <td>0</td>
+                <td>Out of Stock</td>
+            </tr>
+
+            <tr>
+                <td>AB+</td>
+                <td>12</td>
+                <td>Available</td>
+            </tr>
+
+        </table>
+    </div>
+
+</section>
+
+
+<!-- Contact -->
+<section class="contact-section" id="contact">
+    <div class="contact-container">
+        <h2>Save Lives with Blood Donation</h2>
+        <p>Manage and track blood stock efficiently.</p>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <p>© 2026 Blood Bank Management System</p>
+</footer>
+
+
+<!-- JS Search -->
+<script>
+function searchBlood() {
+    let input = document.getElementById("searchInput").value.toUpperCase();
+    let table = document.getElementById("bloodTable");
+    let tr = table.getElementsByTagName("tr");
+
+    for (let i = 1; i < tr.length; i++) {
+        let td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            let txt = td.textContent || td.innerText;
+            tr[i].style.display = txt.toUpperCase().indexOf(input) > -1 ? "" : "none";
+        }
+    }
+}
+</script>
+
+</body>
+</html>
